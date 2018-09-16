@@ -18,3 +18,4 @@ def about(request):
         'user_list': User.objects.all(),
     }
     return render(request, 'about/index.html', context)
+
