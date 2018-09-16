@@ -25,7 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post.apps.PostConfig'
+    # 'index.apps.IndexConfig',
+    'home.apps.HomeConfig',
+    'post.apps.PostConfig',
+    'user.apps.UserConfig',
+    'tinps.apps.TinpsConfig',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +47,7 @@ ROOT_URLCONF = 'py_slash_tinps.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
