@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block contents %}
 
+{% load static %}
 
-<div class="text-right descriptionBlockTop">
-  <div class="descriptionText">
-    <p>dummydummy<br>
-      dummydummy</p>
+<div class="descriptionBlockTop">
+  <div class="descriptionText text-right ">
+    <p style="font-size: 45px">dummydummy</p>
+    <p style="font-size: 25px">dummydummy</p>
+  </div>
+  <div class="start-button">
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-light">py/tinpsをはじめる</button></a>
   </div>
 </div>
 
@@ -44,7 +48,7 @@
 </div>
 
 <div class="row">
-  <div class="col-6" style="background-color: #ffffb7;">
+  <div class="col-sm-6 col-xs-12" style="background-color: #ffffb7;">
     <div class="graghText">
       <h1>開発用リンクメモ</h1>
       <a href="{% url 'post' %}">post</a>
@@ -56,23 +60,21 @@
       <a href="{% url 'about' %}">about</a>
       </div>
   </div>
-  <div class="col-6" style="background-color: #84ffff;">
+  <div class="col-sm-6 col-xs-12" style="background-color: #84ffff;">
     <div class="gragh">
-      <h2>Gragh.</h2>
+      <h3> 参考までに</h3>
+      <h6>チンプス一覧</h6>
+      {% for tinps in tinps_list  %}
+          <p>{{ tinps.title }}</p>
+          <p>{% for ctgr in tinps.category.all %}{{ ctgr }} , {% endfor %}</p>
+      {% endfor %}
+
+      <h6>ユーザ一覧</h6>
+          {% for user in user_list  %}
+          <p>{{ user.user_name }}</p>
+      {% endfor %}
     </div>
   </div>
 </div>
-
-    <h1> 参考までに</h1>
-    <h2>チンプス一覧</h2>
-    {% for tinps in tinps_list  %}
-        <p>{{ tinps.title }}</p>
-        <p>{% for ctgr in tinps.category.all %}{{ ctgr }} , {% endfor %}</p>
-    {% endfor %}
-
-    <h2>ユーザ一覧</h2>
-        {% for user in user_list  %}
-        <p>{{ user.user_name }}</p>
-    {% endfor %} （編集
 
 {% endblock contents %}
