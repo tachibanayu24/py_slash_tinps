@@ -51,15 +51,26 @@ body {
 .descriptionBlockLeft {
   height: 300px;
   background-color: #ffd3a8 ;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  margin-left: -70px;
+}
+
+.description-tinps {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .descriptionBlockRight {
   height: 300px;
   background-color: #9e9eff;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  margin-right: -70px;
+
 }
 
 .newSlider {
