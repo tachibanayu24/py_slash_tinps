@@ -1,13 +1,68 @@
 {% extends "base.html" %}
 {% block contents %}
-    <h1>Index</h1>
-    <a href="{% url 'post' %}">post</a>
-    <a href="{% url 'edit' %}">edit</a>
-    <a href="{% url 'mypage' %}">mypage</a>
-    <a href="{% url 'register' %}">register</a>
-    <a href="{% url 'show' %}">show</a>
-    <a href="{% url 'detail' %}">detail</a>
-    <a href="{% url 'about' %}">about</a>
+
+
+<div class="text-right descriptionBlockTop">
+  <div class="descriptionText">
+    <p>dummydummy<br>
+      dummydummy</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <div class="descriptionBlockLeft">
+        <div class="row">
+          <div class="col-8">
+          </div>
+          <div class="col-4" style="background-color: #84ffff;">
+            <p>dummydummy<br>
+              dummydummy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="descriptionBlockRight">
+        <div class="row">
+          <div class="col-8">
+          </div>
+          <div class="col-4" style="background-color: #84ffff;">
+            <p>dummydummy<br>
+              dummydummy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="newSlider">
+    <p>dummydummy<br>
+      dummydummy</p>
+</div>
+
+<div class="row">
+  <div class="col-6" style="background-color: #ffffb7;">
+    <div class="graghText">
+      <h1>開発用リンクメモ</h1>
+      <a href="{% url 'post' %}">post</a>
+      <a href="{% url 'edit' %}">edit</a>
+      <a href="{% url 'mypage' %}">mypage</a>
+      <a href="{% url 'register' %}">register</a>
+      <a href="{% url 'show' %}">show</a>
+      <a href="{% url 'detail' %}">detail</a>
+      <a href="{% url 'about' %}">about</a>
+      </div>
+  </div>
+  <div class="col-6" style="background-color: #84ffff;">
+    <div class="gragh">
+      <h2>Gragh.</h2>
+    </div>
+  </div>
+</div>
+
     <h1> 参考までに</h1>
     <h2>チンプス一覧</h2>
     {% for tinps in tinps_list  %}
