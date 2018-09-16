@@ -16,32 +16,34 @@
     <title>py/tinps</title>
   </head>
   <body>
-    <nav class="navbar navbar-light" style="background-color: #ffeaff;">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'images/logo_header.png' %} " class="img-fluid" style="height: 70px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-light sticky-top" role="navigation" style="background-color: #ffeaff;">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'images/logo_header.png' %} " class="img-fluid" style="height: 70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ログイン</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ユーザ登録</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">tinpsを投稿</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">マイページ</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ログイン</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">ユーザ登録</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'post' %}">tinpsを投稿</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'mypage' %}">マイページ</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
