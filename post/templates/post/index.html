@@ -2,7 +2,8 @@
 {% block contents %}
 <h1>post</h1>
 
-<form action="">
+<form action="{% url 'update' %}" method="POST">
+    {% csrf_token %}
     <div class="form-group">
       <input class="form-control form-control-lg" type="text" placeholder="title">
     </div>
@@ -15,6 +16,7 @@
                             forceSync: true
                      });
    </script>
+
    <div align="right">
         <input type="submit" value="slash" class="btn btn-outline-danger">
    </div>
