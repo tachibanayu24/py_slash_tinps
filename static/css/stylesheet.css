@@ -1,16 +1,35 @@
+
+
+/* footer style */
+
 .footer {
   position: absolute;
   padding-top: 10px;
+  padding-bottom: 10px;
   bottom: 0;
+  height: auto;
   width: 100%;
-  background-color: #f5f5f5;
 }
 
-.footer_logo {
-  height: 120px;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.form {
+  overflow: hidden; //.formの領域からはみ出た部分を隠す
+  top: 0;
+  right: 50%; //虫眼鏡が現在地からそのまま移動するように調節
+  transition: all 0.1s linear;
+  width: 0;
 }

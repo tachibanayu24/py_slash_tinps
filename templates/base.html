@@ -10,6 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 
     <title>py/tinps</title>
@@ -17,12 +20,8 @@
   <body>
     <nav class="navbar navbar-light" style="background-color: #ffeaff;">
       <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'logo_header.png' %} " style="height: 120px;">
+        <img src="{% static 'logo_header.png' %} " class="img-fluid" style="height: 70px;">
       </a>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="sesrch" placeholder="tinps..." aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,6 +37,12 @@
           <li class="nav-item">
             <a class="nav-link" href="#">ユーザ登録</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">tinpsを投稿</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">マイページ</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -48,21 +53,26 @@
       <footer class="footer" style="background-color: #ffeaff;">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
-              <a href="#"><img class="d-flex align-self-center" src="{% static 'logo_footer.png' %} " style="height: 120px;"></a>
+            <div class="col-4">
+              <a href="#"><img class="d-flex align-self-center img-fluid" src="{% static 'logo_footer.png' %} " style="height: 80px;"></a>
             </div>
-            <div class="col-md-4">
-              <p class="text-muted text-center">copyright</p>
+            <div class="col-4">
+              <div class="copyright">
+                <span class="text-muted" style="font-size: 14px;">© 2018- py/</span>
+              </div>
             </div>
-            <div class="col-md-4 text-right">
-              <p><a href="#">About</a></p>
-              <p><a href="#">お問い合わせ</a></p>
+            <div class="col-4">
+              <div class="text-right align-items-cente">
+                <p><a href="#" class="text-muted"><span style="font-size: 14px;">About</span></a></p>
+                <p><a href="#" class="text-muted"><span style="font-size: 14px;">お問い合わせ</span></a></p>
+              </div>
             </div>
           </div>
         </div>
       </footer>
 
     <!-- Optional JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
