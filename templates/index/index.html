@@ -8,5 +8,16 @@
     <a href="{% url 'show' %}">show</a>
     <a href="{% url 'detail' %}">detail</a>
     <a href="{% url 'about' %}">about</a>
-    <h1>test</h1>
+    <h1> 参考までに</h1>
+    <h2>チンプス一覧</h2>
+    {% for tinps in tinps_list  %}
+        <p>{{ tinps.title }}</p>
+        <p>{% for ctgr in tinps.category.all %}{{ ctgr }} , {% endfor %}</p>
+    {% endfor %}
+
+    <h2>ユーザ一覧</h2>
+        {% for user in user_list  %}
+        <p>{{ user.user_name }}</p>
+    {% endfor %} （編集
+
 {% endblock contents %}
