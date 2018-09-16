@@ -16,20 +16,3 @@
   justify-content: center;
   align-items: center;
 }
-
-button {
-  cursor: pointer;
-}
-
-input,
-button {
-  outline: none;
-}
-
-.form {
-  overflow: hidden; //.formの領域からはみ出た部分を隠す
-  top: 0;
-  right: 50%; //虫眼鏡が現在地からそのまま移動するように調節
-  transition: all 0.1s linear;
-  width: 0;
-}
