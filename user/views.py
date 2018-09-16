@@ -1,8 +1,21 @@
 from django.shortcuts import render
+from .models import User
+from post.models import Tinps
 
 def mypage(request):
-    return render(request, 'mypage/index.html')
+    #　本来はログイン中のユーザのみ渡すはず
+    context = {
+        'tinps_list':Tinps.objects.all(),
+        'user_list': User.objects.all(),
+    }
+    return render(request, 'mypage/index.html', context)
 
 
 def register(request):
-    return render(request, 'register/index.html')
+    #　本来はログイン中のユーザのみ渡すはず
+    context = {
+        'tinps_list':Tinps.objects.all(),
+        'user_list': User.objects.all(),
+    }
+    return render(request, 'register/index.html', context)
+

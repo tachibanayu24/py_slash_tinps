@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from user.models import User
+from post.models import Tinps
+
 
 def index(request):
-    return render(request, 'index/index.html')
+    context = {
+        'tinps_list':Tinps.objects.all(),
+        'user_list': User.objects.all(),
+    }
+    return render(request, 'index/index.html', context)
 
 
 def about(request):
-    return render(request, 'about/index.html')
+    context = {
+        'tinps_list':Tinps.objects.all(),
+        'user_list': User.objects.all(),
+    }
+    return render(request, 'about/index.html', context)
