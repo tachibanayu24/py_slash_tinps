@@ -64,13 +64,21 @@ body {
   max-width: 90%; */
 }
 
-.newSlider {
-  background-color: #ff7f7f;
-  padding: 40px;
-}
-
 .graghText, .gragh {
   height: 400px;
   text-align: center;
   padding: 30px;
+}
+
+
+/* mypage */
+
+.upper-content > img {
+  height: 150px;
+}
+
+.user-info {
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 18px;
 }
