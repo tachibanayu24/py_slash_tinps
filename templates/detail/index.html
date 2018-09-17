@@ -1,4 +1,106 @@
 {% extends "base.html" %}
 {% block contents %}
-<h1>aaaa</h1>
+
+{% load static %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-sm-2 col-xs-12">
+          <img src="{% static 'images/dummy.png' %}" style="margin: 10px 0 0 20px; height: 50px; border-radius: 50%;">
+        </div>
+        <div class="col-sm-3 col-xs-5">
+          <p class="text-center">@Username</p>
+        </div>
+        <div class="col-sm-3 col-xs-1"></div>
+        <div class="col-sm-4 col-xs-4">
+          <p class="text-right text-muted" style="font-size: 12px;">投稿日：{yyyymmdd} {hh:mm}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2 col-xs-12"></div>
+    <div class="col-sm-8 col-xs-12" style="padding: 5px;">
+
+      <div class="tinps-title" style="margin: 0 5px 10px 5px;">
+        <h1>This is Title.</h1>
+      </div>
+
+      <div class=tinps-cat style="margin: 0 5px 10px 5px;">
+        <span class="badge badge-info">
+          Category1
+        </span>
+        <span class="badge badge-info">
+          Category2
+        </span>
+        <span class="badge badge-info">
+          Category3
+        </span>
+      </div>
+
+      <hr>
+
+
+
+      <div class="tinps-body" style="margin: 0 5px 50px 5px;">
+        <h1>Lorem ipsum dolor sit amet consectetuer adipiscing
+        elit</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa
+        <strong>strong</strong>. Cum sociis natoque penatibus
+        et magnis dis parturient montes, nascetur ridiculus
+        mus. Donec quam felis, ultricies nec, pellentesque
+        eu, pretium quis, sem. Nulla consequat massa quis
+        enim. Donec pede justo, fringilla vel, aliquet nec,
+        vulputate eget, arcu. In enim justo, rhoncus ut,
+        imperdiet a, venenatis vitae, justo. Nullam dictum
+        felis eu pede <a class="external ext" href="#">link</a>
+        mollis pretium. Integer tincidunt. Cras dapibus.
+        Vivamus elementum semper nisi. Aenean vulputate
+        eleifend tellus. Aenean leo ligula, porttitor eu,
+        consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+        dapibus in, viverra quis, feugiat a, tellus. Phasellus
+        viverra nulla ut metus varius laoreet. Quisque rutrum.
+        Aenean imperdiet. Etiam ultricies nisi vel augue.
+        Curabitur ullamcorper ultricies nisi.</p>
+        <h1>Lorem ipsum dolor sit amet consectetuer adipiscing
+        elit</h1>
+        <h2>Aenean commodo ligula eget dolor aenean massa</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        <h2>Aenean commodo ligula eget dolor aenean massa</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet consectetuer.</li>
+          <li>Aenean commodo ligula eget dolor.</li>
+          <li>Aenean massa cum sociis natoque penatibus.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa.
+        Cum sociis natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        <form action="#" method="post">
+          <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your
+        full name" />
+      </div>
+
+    </div>
+
+    <div class="col-sm-2 col-xs-12"></div>
+  </div>
+</div>
+
 {% endblock contents %}
