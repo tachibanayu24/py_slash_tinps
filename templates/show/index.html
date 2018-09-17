@@ -1,4 +1,154 @@
 {% extends "base.html" %}
 {% block contents %}
-<h1>show</h1>
+{% load static %}
+
+<br>
+<br>
+<div align="center"><h3 style="color:#FF00FF;"> ~Full tinps ~</h3></div>
+    <!-- <div class="container">
+        <div class="row"> -->
+            <!-- <div class="col-xs-8 col-md-8 col-lg-8"> -->
+<div class="tab_wrap">
+	<input id="tab1" type="radio" name="tab_btn" checked>
+	<input id="tab2" type="radio" name="tab_btn">
+	<input id="tab3" type="radio" name="tab_btn">
+
+	<div class="tab_area">
+		<label class="tab1_label" for="tab1">トレンド</label>
+		<label class="tab2_label" for="tab2">タイムライン</label>
+	</div>
+	<div class="panel_area">
+		<div id="panel1" class="tab_panel">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="5"><img src="{% static 'pokky.png' %}" style="height: 30px;"></th>
+                <th><h3 style="color:pink">trend</h4></th></th>
+          </tr>
+        </thead>
+      <tbody>
+        {%for tinps in tinps_list_order %}
+        <tr>
+          <td colspan="2" rowspan="2">アイコン</td>
+          <td colspan="10" style="text-align:center;">{{tinps.title}}</td>
+        </tr>
+        <tr>
+            <td>
+              <small>by</small>
+                {%for user in user_list%}
+              <small>
+                <script>
+                  if( '{{tinps.user_name_id}}'=='{{user.user_id}}'){
+                    document.write('{{user.user_name}}')}
+               </script>
+                {% endfor%}
+
+              </small>
+            </td>
+            <td colspan="3">
+                <small>
+                  {{tinps.created_at}}
+                </small>
+            </td>
+            <small>
+                <td colspan="3" style="text-align:right;"> <div style="color:pink">{{tinps.slashed_cnt}}</div></td>
+            </small>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+		</div>
+		<div id="panel2" class="tab_panel">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th colspan="5"> <img src="{% static 'peach.png' %}" style="height: 30px;"></th>
+                            <th><h3 style="color:pink">fast tinps</h4></th>
+                        </tr>
+                      </thead>
+                    <tbody>
+                      {%for tinps in tinps_list_timeorder %}
+                      <tr>
+                        <td colspan="2" rowspan="2">アイコン</td>
+                        <td colspan="10" style="text-align:center;">{{tinps.title}}</td>
+                      </tr>
+                      <tr>
+                          <td>
+                            <small>by</small>
+                              {%for user in user_list%}
+                            <small>
+                              <script>
+                                if( '{{tinps.user_name_id}}'=='{{user.user_id}}'){
+                                  document.write('{{user.user_name}}')}
+                             </script>
+                              {% endfor%}
+
+                            </small>
+                          </td>
+                          <td colspan="3">
+                              <small>
+                                {{tinps.created_at}}
+                              </small>
+                          </td>
+                          <small>
+                              <td colspan="3" style="text-align:right;"> <div style="color:pink">{{tinps.slashed_cnt}}</div></td>
+                          </small>
+                        </tr>
+                          {% endfor %}
+                      </tbody>
+                    </table>
+		</div>
+	</div>
+</div>
+
+
+<style>
+.tab_wrap{width:500px; margin:80px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0 10px;}
+.tab_area label{width:150px; margin:0 5px; display:inline-block; padding:12px 0; color:#999; background:#FFD5EC; text-align:center; font-size:13px; cursor:pointer; transition:ease 0.2s opacity;}
+.tab_area label:hover{opacity:0.5;}
+.panel_area{background:#fff;}
+.tab_panel{width:100%; padding:80px 0; display:none;}
+.tab_panel p{font-size:14px; letter-spacing:1px; text-align:center;}
+
+#tab1:checked ~ .tab_area .tab1_label{background:#fff; color:pink;}
+#tab1:checked ~ .panel_area #panel1{display:block;}
+#tab2:checked ~ .tab_area .tab2_label{background:#fff; color:pink;}
+#tab2:checked ~ .panel_area #panel2{display:block;}
+
+
+<style>
+
+<script>
+$i:1;
+$length:3;
+@while $i <= $length{
+	#tab#{$i}:checked{
+		~ .tabarea1 .tab#{$i}_label{background:#fff; color:#000;}
+		~ .panel_area #panel#{$i}{display:block;}
+	}
+	$i:$i + 1;
+}
+</script>
+
+<!--         <div class="col-xs-2 col-md-2 col-lg-2">
+                <p>ユーザランキング</p>
+                <table class="table">
+                <tbody>
+                    {%for user in user_list %}
+                  <td>
+                    <small><small>アイコン</small></small>
+                  </td>
+                    <td>{{user.user_name}}</td>
+                      {%for tinps in tinps_list %}
+                    <td>
+                   </td>
+                     {% endfor %}
+                  </tr>
+                   {% endfor %}
+                  </tbody>
+                </table>
+              </div> -->
 {% endblock contents %}

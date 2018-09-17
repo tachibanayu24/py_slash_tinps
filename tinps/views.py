@@ -7,6 +7,9 @@ def show(request):
     context = {
         'tinps_list':Tinps.objects.all(),
         'user_list': User.objects.all(),
+        'tinps_list_order':Tinps.objects.all().order_by('-slashed_cnt'),
+        # 'tinps_list_group' : Tinps.objects.select_related().all().aggregate(Slashed_cnt=sum('slashed_cnt'))
+        'tinps_list_timeorder':Tinps.objects.all().order_by('-updated_at')
     }
     return render(request, 'show/index.html', context)
 
