@@ -23,3 +23,5 @@ then check `http://127.0.0.1:8000/`
 `SHOW TABLES FROM py_slash_tinps`
 
 You can check the tables added by migrations.
+
+

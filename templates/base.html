@@ -6,45 +6,53 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+    <!-- load font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
+    <!-- Optional JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
     <title>py/tinps</title>
   </head>
   <body>
-    <nav class="navbar navbar-light" style="background-color: #ffeaff;">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'logo_header.png' %} " class="img-fluid" style="height: 70px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav id="main-navbar" class="navbar navbar-light sticky-top" style="background-color: #ffeaff;">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'images/logo_header.png' %} " class="img-fluid" style="height: 70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ログイン</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ユーザ登録</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">tinpsを投稿</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">マイページ</a>
-          </li>
-        </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ログイン</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">ユーザ登録</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'post' %}">tinpsを投稿</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'mypage' %}">マイページ</a>
+            </li>
+          </ul>
+        </div>
     </nav>
 
       {% block contents %}
@@ -54,7 +62,7 @@
         <div class="container">
           <div class="row">
             <div class="col-4">
-              <a href="#"><img class="d-flex align-self-center img-fluid" src="{% static 'logo_footer.png' %} " style="height: 80px;"></a>
+              <a href="#"><img class="d-flex align-self-center img-fluid" src="{% static 'images/logo_footer.png' %} " style="height: 80px;"></a>
             </div>
             <div class="col-4">
               <div class="copyright">
@@ -63,7 +71,7 @@
             </div>
             <div class="col-4">
               <div class="text-right align-items-cente">
-                <p><a href="#" class="text-muted"><span style="font-size: 14px;">About</span></a></p>
+                <p><a href="{% url 'about' %}" class="text-muted"><span style="font-size: 14px;">About</span></a></p>
                 <p><a href="#" class="text-muted"><span style="font-size: 14px;">お問い合わせ</span></a></p>
               </div>
             </div>
@@ -71,11 +79,24 @@
         </div>
       </footer>
 
-    <!-- Optional JavaScript -->
-    <script src="{% static 'js/script.js' %}"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      $('.fa-columns').click(function() {
+        $('#main-navbar').hide();
+      });
+      $('.fa-arrows-alt').click(function() {
+        $('.navbar').toggle();
+      });
+
+      var $slider_container = $('.slider-container'),
+          $slider = $('.slider');
+
+      $slider.slick({
+        appendArrows: $slider_container,
+        // FontAwesomeのクラスを追加
+        prevArrow: '<div class="slider-arrow slider-prev fa fa-angle-left"></div>',
+        nextArrow: '<div class="slider-arrow slider-next fa fa-angle-right"></div>',
+      });
+  </script>
+
   </body>
 </html>
