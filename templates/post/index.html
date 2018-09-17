@@ -4,11 +4,12 @@
 <div style="margin-bottom: 20px;"></div>
 <div class="container" style="margin: 20px 0 30px 0;">
   <h1>tinpsを投稿</h1>
-  <form action="">
+  <form action="{% url 'insert' %}" method="POST">
+      {% csrf_token %}
       <div class="form-group">
-        <input class="form-control form-control-lg" type="text" placeholder="title">
+          <input class="form-control form-control-lg" name="title" type="text" placeholder="title">
       </div>
-        <input textarea id="editor" name="name" rows="8" cols="40"></textarea>
+      <input textarea id="editor" name="tinps_body" rows="8" cols="40"></textarea>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
      <script src="{% static 'js/simplemde.arrange.min.js' %}"></script>
      <script>
