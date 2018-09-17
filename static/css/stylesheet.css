@@ -73,9 +73,9 @@ body {
 }
 
 .graghText, .gragh {
-  height: 400px;
   text-align: center;
-  padding: 30px;
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
 }
 
 
