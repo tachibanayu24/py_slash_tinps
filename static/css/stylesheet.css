@@ -50,18 +50,26 @@ body {
 
 .descriptionBlockLeft, .descriptionBlockRight {
   text-align: center;
-  height: 400px;
-  padding-top: 20px;
+  /* height: 350px; */
+  padding-top: 10px;
   /* background-color: #ffd3a8; */
   /* position: relative; */
 }
 
 .description-tinps {
-  text-align: center;
   display: block;
-  height: 260px;
-  /* max-height: 90%;
-  max-width: 90%; */
+  text-align: center;
+  height: 80%;
+  width: 75%;
+  margin: 20px 20px 0 20px;
+}
+
+.description-slash {
+  display: block;
+  text-align: center;
+  height: 79%;
+  width: 60%;
+  margin: 20px 0 0 60px;
 }
 
 .graghText, .gragh {
