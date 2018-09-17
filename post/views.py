@@ -4,6 +4,7 @@ from django.views import generic
 from .models import Tinps
 from user.models import User
 from .forms import TinpsForm
+from django.conf.urls import url
 
 
 def post(request):
@@ -47,7 +48,8 @@ def insert(request):
     )
     query.save()
 
-    return render(request, 'show/index.html')
+    #return redirect(request, 'show/index.html')
+    return redirect('/tinps/show/')
 
 
 
@@ -75,6 +77,8 @@ def update(request):
     )
     query.save()
 
-    return render(request, 'show/index.html')
+    # return redirect(request, 'show/index.html')
+    return redirect('/tinps/show/')
+
 
 
