@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block contents %}
+<h1>edit</h1>
+
+<form action="">
+    <div class="form-group">
+      <input class="form-control form-control-lg" type="text" placeholder="title">
+    </div>
+      <input textarea id="editor" name="name" rows="8" cols="40" value="">
+      <!-- データベースのテキストをvalueの中に入れる -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+   <script>
+          var simplemde = new SimpleMDE({
+                            element: document.getElementById("editor"),
+                            forceSync: true
+                     });
+   </script>
+   <div align="right">
+        <input type="submit" value="slash" class="btn btn-outline-danger">
+   </div>
+</form>
+
+{% endblock contents %}

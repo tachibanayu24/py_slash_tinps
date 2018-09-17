@@ -1,0 +1,76 @@
+/* common style */
+
+body {
+  font-family: 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+/* .row {
+    margin-right: -120px;
+    margin-left: -120px;
+} */
+
+/* base.html */
+/* footer style */
+
+.footer {
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* bottom: 0; */
+  height: auto;
+  width: 100%;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+/* home/index */
+
+.descriptionBlockTop {
+  height: 300px;
+  width: 100%;
+  background-image: url("../images/main.png");
+  background-size: cover;
+  padding: 20px;
+}
+
+.descriptionText {
+  width: 100%;
+  padding: 30px 40px 30px 0;
+}
+
+.start-button {
+  text-align: center;
+  margin: 20px;
+}
+
+.descriptionBlockLeft, .descriptionBlockRight {
+  text-align: center;
+  height: 400px;
+  padding-top: 20px;
+  /* background-color: #ffd3a8; */
+  /* position: relative; */
+}
+
+.description-tinps {
+  text-align: center;
+  display: block;
+  height: 260px;
+  /* max-height: 90%;
+  max-width: 90%; */
+}
+
+.newSlider {
+  background-color: #ff7f7f;
+  padding: 40px;
+}
+
+.graghText, .gragh {
+  height: 400px;
+  text-align: center;
+  padding: 30px;
+}
