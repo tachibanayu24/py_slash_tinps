@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% block contents %}
-<h1>post</h1>
-
-<form action="{% url 'update' %}" method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-      <input class="form-control form-control-lg" name="title" type="text" placeholder="title">
-    </div>
-      <input textarea id="editor" name="tinps_body" rows="8" cols="40"></textarea>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-   <script>
-          var simplemde = new SimpleMDE({
-                            element: document.getElementById("editor"),
-                            forceSync: true
-          });
-   </script>
-
-   <div align="right">
-        <input type="submit" value="slash" class="btn btn-outline-danger">
-   </div>
-</form>
+{% load static %}
+<div style="margin-bottom: 20px;"></div>
+<div class="container" style="margin: 20px 0 30px 0;">
+  <h1>tinpsを投稿</h1>
+  <form action="">
+      <div class="form-group">
+        <input class="form-control form-control-lg" type="text" placeholder="title">
+      </div>
+        <input textarea id="editor" name="name" rows="8" cols="40"></textarea>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+     <script src="{% static 'js/simplemde.arrange.min.js' %}"></script>
+     <script>
+            var simplemde = new SimpleMDE({
+                              element: document.getElementById("editor"),
+                              forceSync: true
+                       });
+     </script>
+     <div align="right">
+          <input type="submit" value="tinps投稿" class="btn btn-outline-danger">
+     </div>
+  </form>
+</div>
 {% endblock contents %}
