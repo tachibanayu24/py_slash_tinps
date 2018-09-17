@@ -1,23 +1,125 @@
 {% extends "base.html" %}
-{% block contents %}
-    <h1>Index</h1>
-    <a href="{% url 'post' %}">post</a>
-    <a href="{% url 'edit' %}">edit</a>
-    <a href="{% url 'mypage' %}">mypage</a>
-    <a href="{% url 'register' %}">register</a>
-    <a href="{% url 'show' %}">show</a>
-    <a href="{% url 'detail' %}">detail</a>
-    <a href="{% url 'about' %}">about</a>
-    <h1> 参考までに</h1>
-    <h2>チンプス一覧</h2>
-    {% for tinps in tinps_list  %}
-        <p>{{ tinps.title }}</p>
-        <p>{% for ctgr in tinps.category.all %}{{ ctgr }} , {% endfor %}</p>
-    {% endfor %}
+{% load static %}
 
-    <h2>ユーザ一覧</h2>
-        {% for user in user_list  %}
-        <p>{{ user.user_name }}</p>
-    {% endfor %} （編集
+{% block contents %}
+
+<div class="descriptionBlockTop">
+  <div class="descriptionText text-right ">
+    <p style="font-size: 45px">dummydummy</p>
+    <p style="font-size: 25px">dummydummy</p>
+  </div>
+  <div class="start-button">
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-light">py/tinpsをはじめる</button></a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <div class="descriptionBlockLeft">
+        <div class="row">
+          <div class="col-xs-12 mx-auto">
+            <img src="{% static 'images/description_tinps.png' %}" class="description-tinps">
+          </div>
+          <div class="col-xs-12 mx-auto">
+            <p style="padding-top: 10px;">dummydummydummydummy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="descriptionBlockRight">
+        <div class="row">
+          <div class="col-xs-12 mx-auto">
+            <img src="{% static 'images/description_slash.png' %}" class="description-tinps">
+          </div>
+          <div class="col-xs-12 mx-auto">
+            <p style="padding-top: 10px;">dummydummydummydummy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slider-container" style="margin: 10px;margin-bottom: 20px;">
+  <div class="slider">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-xs-12" style="background-color: #ffffb7;">
+    <div class="graghText">
+      <h1>開発用リンクメモ</h1>
+      <a href="{% url 'post' %}">post</a>
+      <a href="{% url 'edit' %}">edit</a>
+      <a href="{% url 'mypage' %}">mypage</a>
+      <a href="{% url 'register' %}">register</a>
+      <a href="{% url 'show' %}">show</a>
+      <a href="{% url 'detail' %}">detail</a>
+      <a href="{% url 'about' %}">about</a>
+      </div>
+  </div>
+  <div class="col-sm-6 col-xs-12" style="background-color: #84ffff;">
+    <div class="gragh">
+      <h3> 参考までに</h3>
+      <h6>チンプス一覧</h6>
+      {% for tinps in tinps_list %}
+          <p>{{ tinps.title }}</p>
+          <p>{% for ctgr in tinps.category.all %}{{ ctgr }} , {% endfor %}</p>
+      {% endfor %}
+
+      <h6>ユーザ一覧</h6>
+          {% for user in user_list  %}
+          <p>{{ user.user_name }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider-container {
+  position: relative;
+  }
+  .slider {
+  display: none;
+  margin: 0 24px;
+  overflow: hidden;
+  }
+  .slider.slick-initialized {
+  display: block;
+  }
+  .slider-arrow {
+  position: absolute;
+  top: 50%;
+  height: 36px;
+  margin-top: -18px;  /* 高さの半分だけネガティブマージン */
+  color: #bd77f2;
+  line-height: 36px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10;  /* 重要 */
+  }
+  .slider-prev {
+  left: 0;
+  }
+  .slider-next {
+  right: 0;
+  }
+  .slick-slide {
+  padding: 1.5em 0;
+  color: #333;
+  text-align: center;
+  font-size: 1.1em;
+  outline: 0;
+  background: linear-gradient(-135deg, #c6c6ff, #ffc6e2);
+  }
+</style>
 
 {% endblock contents %}
