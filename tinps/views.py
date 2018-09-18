@@ -2,7 +2,6 @@ from django.shortcuts import render
 from user.models import User
 from post.models import Tinps, User
 
-
 def show(request):
     context = {
         'tinps_list':Tinps.objects.all(),
