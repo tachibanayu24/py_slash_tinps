@@ -5,6 +5,7 @@ from .models import Tinps
 from user.models import User
 from .forms import TinpsForm
 from django.conf.urls import url
+from xml.dom.minidom import parseString
 
 
 def post(request):
@@ -25,6 +26,11 @@ def edit(request):
 
 
 def insert(request):
+    page_as_doc = parseString(response.content)
+    inputs = page_as_doc.getElementsByTagName('edit')[0]
+    print(inputs)
+
+
     print (request.POST)
     req = request.POST
 
@@ -42,7 +48,7 @@ def insert(request):
 
     query = Tinps(
         title=title,
-        tinps_body=tinps_body,
+        tinps_body=tinps_body.replace('\n||\r||\r\n', '<br>'),
         user_name=user,
         #category
     )
@@ -69,9 +75,10 @@ def update(request):
     title = req["title"]
     tinps_body = req["tinps_body"]
 
+    #printtinps_body.replace('\n||\r||\r\n', '<br>')
     query = Tinps(
         title=title,
-        tinps_body=tinps_body,
+        tinps_body=tinps_body.replace('\n||\r||\r\n', '<br>'),
         user_name=user,
         #category
     )

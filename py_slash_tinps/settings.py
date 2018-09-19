@@ -25,12 +25,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_extensions',
+    'allauth', # new
+    'allauth.account', # new
+    'allauth.socialaccount', # new
+    'allauth.socialaccount.providers.github', # new
     # 'index.apps.IndexConfig',
     'home.apps.HomeConfig',
     'post.apps.PostConfig',
     'user.apps.UserConfig',
     'tinps.apps.TinpsConfig',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/tinps/show'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
