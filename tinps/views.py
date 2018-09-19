@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from user.models import User
-from post.models import Tinps
+from post.models import Tinps, User
 
 
 def show(request):
@@ -15,8 +15,19 @@ def show(request):
 
 
 def detail(request):
+
+    tinps_id = request.GET.get('tinps_id')
+    tinps = Tinps.objects.filter(tinps_id=tinps_id).first()
+
+    #for item in tinps.user_name:
+    user = User.objects.filter(user_id=tinps.user_name.user_id).first()
+    print(user)
+
+    print(vars(user))
+    print("----------------------")
     context = {
-        'tinps_list':Tinps.objects.all(),
-        'user_list': User.objects.all(),
+        'tintin':tinps,
+        'user':user,
     }
+    print(context)
     return render(request, 'detail/index.html', context)

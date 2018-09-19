@@ -20,7 +20,7 @@ class Tinps(models.Model):
     tinps_body = models.CharField('本文', max_length=1000)
     slashed_cnt = models.IntegerField("パイスラ回数", default=0)
     wached_cnt = models.IntegerField("閲覧回数", default=0)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category, blank=True)
     updated_at = models.DateTimeField('更新日', default=timezone.now)
     created_at = models.DateTimeField('登録日', default=timezone.now)
 
