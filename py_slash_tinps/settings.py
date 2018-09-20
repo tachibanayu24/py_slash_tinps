@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'allauth', # new
     'allauth.account', # new
     'allauth.socialaccount', # new
-    'allauth.socialaccount.providers.github', # new
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.twitter',
     # 'index.apps.IndexConfig',
     'home.apps.HomeConfig',
     'post.apps.PostConfig',
@@ -42,6 +43,12 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+
+ACCOUNT_FORMS = {
+    # 'login': 'mysite.forms.MyCustomLoginForm'
+}
+
 
 SITE_ID = 1
 
