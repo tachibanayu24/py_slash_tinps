@@ -8,12 +8,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=9gxzmiy1-ua2m*zur7e@u$uo&678!$73f%6g=y&i$eoyj9bg2'
+# SECRET_KEY = '=9gxzmiy1-ua2m*zur7e@u$uo&678!$73f%6g=y&i$eoyj9bg2'
+SECRET_KEY = 'DJANGO_APP_SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['52.197.22.90']
 
 
 # Application definition
@@ -91,10 +92,10 @@ WSGI_APPLICATION = 'py_slash_tinps.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'py_slash_tinps', # DB名を設定
-        'USER': 'root', # DBへ接続するユーザIDを設定
-        'PASSWORD': '', # DBへ接続するユーザIDのパスワードを設定
-        'HOST': '127.0.0.1',
+        'NAME': 'DB_NAME', # DB名を設定
+        'USER': 'DB_USER', # DBへ接続するユーザIDを設定
+        'PASSWORD': 'DB_PASSWORD', # DBへ接続するユーザIDのパスワードを設定
+        'HOST': 'DB_HOST',
         'PORT': '',
     }
 }
