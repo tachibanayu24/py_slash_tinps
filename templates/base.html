@@ -16,14 +16,6 @@
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-    <!-- Optional JavaScript -->
-    <script src="{% static 'js/script.js' %}"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="{% static 'js/slick.min.js' %}"></script>
-
       {% block extra_head %}
     {% endblock %}
 
@@ -131,47 +123,12 @@
         </div>
       </footer>
 
-    <script>
-      $('.fa-columns').click(function() {
-        $('#main-navbar').hide();
-      });
-      $('.fa-arrows-alt').click(function() {
-        $('.navbar').toggle();
-      });
-
-      var $slider_container = $('.slider-container'),
-          $slider = $('.slider');
-
-      $slider.slick({
-        appendArrows: $slider_container,
-        // FontAwesomeのクラスを追加
-        prevArrow: '<div class="slider-arrow slider-prev fa fa-angle-left"></div>',
-        nextArrow: '<div class="slider-arrow slider-next fa fa-angle-right"></div>',
-      });
-
-      $('form').submit(function() {
-
-        var url = 'https://slack.com/api/chat.postMessage',
-            data = {
-                token: 'xoxp-414368684705-414209150944-440338646112-8455f7bb849561f979ea400c136d4cdb',
-                channel: '#23_shinjuku_manage',
-                username: 'ぱいちんユーザからの問い合わせ',
-                text: 'ぱいちんユーザから問い合わせがありました' + '\n'
-                  + '==============================================' + '\n'
-                  + '件名: ' + $('#contact-title').val() + '\n'
-                  + '連絡先: ' + $('#contact-mail').val() + '\n'
-                  + '内容: ' + $('#contact-body').val() + '\n'
-                  + '=============================================='
-            };
-
-        $.ajax({
-            type: 'GET',
-            url: url,
-            data: data,
-            });
-        alert('お問い合わせありがとうございます。3日経っても返答がない場合は、お手数ですがもう一度お問い合わせください。');
-      });
-  </script>
-
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="{% static 'js/slick.min.js' %}"></script>
+      <!-- Optional JavaScript -->
+      <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
