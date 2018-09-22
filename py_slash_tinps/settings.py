@@ -1,14 +1,17 @@
-import os
+import os, environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# env = environ.Env(DEBUG=(bool, False),) # set default values and casting
+# environ.Env.read_env('.env') # reading .env file
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=9gxzmiy1-ua2m*zur7e@u$uo&678!$73f%6g=y&i$eoyj9bg2'
+# SECRET_KEY = '=9gxzmiy1-ua2m*zur7e@u$uo&678!$73f%6g=y&i$eoyj9bg2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -94,10 +97,14 @@ DATABASES = {
         'NAME': 'py_slash_tinps', # DB名を設定
         'USER': 'root', # DBへ接続するユーザIDを設定
         'PASSWORD': '', # DBへ接続するユーザIDのパスワードを設定
-        'HOST': '127.0.0.1',
+        'HOST': '',
         'PORT': '',
     }
 }
+
+# DATABASES = {
+#     'default': env.db(),
+# }
 
 
 # Password validation

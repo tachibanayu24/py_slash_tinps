@@ -20,7 +20,7 @@ $(function() {
 
     var url = 'https://slack.com/api/chat.postMessage',
         data = {
-            token: 'xoxp-414368684705-414209150944-440338646112-8455f7bb849561f979ea400c136d4cdb',
+            token: SLACK_API,
             channel: '#23_shinjuku_manage',
             username: 'ぱいちんユーザからの問い合わせ',
             text: 'ぱいちんユーザから問い合わせがありました' + '\n'
