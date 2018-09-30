@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import generic
 from .models import Tinps
-from user.models import User
 from .forms import TinpsForm
 from django.conf.urls import url
 from xml.dom.minidom import parseString

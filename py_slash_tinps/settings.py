@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # 'index.apps.IndexConfig',
     'home.apps.HomeConfig',
     'post.apps.PostConfig',
-    'user.apps.UserConfig',
     'tinps.apps.TinpsConfig',
     'users',
 ]
