@@ -35,16 +35,16 @@
         </tr>
         <tr>
             <td>
-{#              <small>by</small>#}
-{#                {%for user in user_list%}#}
-{#              <small>#}
-{#                <script>#}
-{#                  if( '{{tinps.user_name_id}}'=='{{user.user_id}}'){#}
-{#                    document.write('{{user.user_name}}')}#}
-{#               </script>#}
-{#                {% endfor%}#}
-{##}
-{#              </small>#}
+              <small>by</small>
+                {%for user in user_list%}
+              <small>
+                <script>
+                  if( '{{tinps.user.id}}'=='{{user.id}}'){
+                    document.write('{{user.user_name}}')}
+               </script>
+                {% endfor%}
+
+              </small>
             </td>
             <td colspan="3">
                 <small>
@@ -71,7 +71,7 @@
                       {%for tinps in tinps_list_timeorder %}
                       <tr>
                         <td colspan="2" rowspan="2">アイコン</td>
-                        <td colspan="10" style="text-align:center;">{{tinps.title}}</td>
+                        <td colspan="10" style="text-align:center;"><a href="/tinps/detail?tinps_id={{tinps.tinps_id}}">{{tinps.title}}</a></td>
                       </tr>
                       <tr>
                           <td>
