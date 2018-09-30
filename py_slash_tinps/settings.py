@@ -1,4 +1,5 @@
-import os, environ
+#import os, environ
+import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,11 +36,13 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # new
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.google',
     # 'index.apps.IndexConfig',
     'home.apps.HomeConfig',
     'post.apps.PostConfig',
     'user.apps.UserConfig',
     'tinps.apps.TinpsConfig',
+    'users',
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -47,11 +50,13 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
+AUTH_USER_MODEL = 'users.CustomUser' # new
 
 ACCOUNT_FORMS = {
     # 'login': 'mysite.forms.MyCustomLoginForm'
 }
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 SITE_ID = 1
 

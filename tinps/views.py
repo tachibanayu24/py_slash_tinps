@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from user.models import User
-from post.models import Tinps, User
+from users.models import CustomUser
+from post.models import Tinps
+
 
 def show(request):
+    print("check")
     context = {
         'tinps_list':Tinps.objects.all(),
         'user_list': User.objects.all(),
