@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 from django.utils import timezone
-from user.models import User
+from users.models import CustomUser
 
 class Category(models.Model):
     category_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -13,8 +13,8 @@ class Category(models.Model):
 
 class Tinps(models.Model):
     tinps_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_name = models.ForeignKey(
-        User, on_delete=models.PROTECT,
+    user = models.ForeignKey(
+        CustomUser, on_delete=models.PROTECT,
     )
     title = models.CharField('タイトル', max_length=100)
     tinps_body = models.CharField('本文', max_length=1000)

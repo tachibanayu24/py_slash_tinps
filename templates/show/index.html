@@ -24,7 +24,7 @@
         <thead>
           <tr>
             <th colspan="5"><img src="{% static 'pokky.png' %}" style="height: 30px;"></th>
-                <th><h3 style="color:pink">trend</h4></th></th>
+                <th><h3 style="color:pink">trend</h3></th></th>
           </tr>
         </thead>
       <tbody>
@@ -39,7 +39,7 @@
                 {%for user in user_list%}
               <small>
                 <script>
-                  if( '{{tinps.user_name_id}}'=='{{user.user_id}}'){
+                  if( '{{tinps.user.id}}'=='{{user.id}}'){
                     document.write('{{user.user_name}}')}
                </script>
                 {% endfor%}
@@ -55,7 +55,7 @@
                 <td colspan="3" style="text-align:right;"> <div style="color:pink">{{tinps.slashed_cnt}}</div></td>
             </small>
           </tr>
-            {% endfor %}
+        {% endfor %}
         </tbody>
       </table>
 		</div>
@@ -71,7 +71,7 @@
                       {%for tinps in tinps_list_timeorder %}
                       <tr>
                         <td colspan="2" rowspan="2">アイコン</td>
-                        <td colspan="10" style="text-align:center;">{{tinps.title}}</td>
+                        <td colspan="10" style="text-align:center;"><a href="/tinps/detail?tinps_id={{tinps.tinps_id}}">{{tinps.title}}</a></td>
                       </tr>
                       <tr>
                           <td>
