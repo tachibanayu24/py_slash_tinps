@@ -11,7 +11,6 @@ from django.contrib import messages
 
 
 def post(request):
-    print (111)
     context = {
         'tinps_list':Tinps.objects.all(),
         'form':TinpsForm()
@@ -20,7 +19,6 @@ def post(request):
 
 
 def edit(request):
-    print (222)
     context = {
         'tinps_list':Tinps.objects.all(),
     }
@@ -44,8 +42,7 @@ def insert(request):
     query.save()
     messages.success(request, '新たなtinpsを投稿しました！！！')
 
-    #return redirect(request, '/tinps/show/')
-    return render(request, 'show/index.html')
+    return redirect('/tinps/show')
 
 
 def update(request):
