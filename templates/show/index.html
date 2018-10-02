@@ -64,7 +64,7 @@
                       <thead>
                         <tr>
                           <th colspan="5"> <img src="{% static 'peach.png' %}" style="height: 30px;"></th>
-                            <th><h3 style="color:pink">fast tinps</h4></th>
+                            <th><h4 style="color:pink">fast tinps</h4></th>
                         </tr>
                       </thead>
                     <tbody>
@@ -117,38 +117,35 @@ input[type="radio"]{display:none;}
 #tab1:checked ~ .panel_area #panel1{display:block;}
 #tab2:checked ~ .tab_area .tab2_label{background:#fff; color:pink;}
 #tab2:checked ~ .panel_area #panel2{display:block;}
+</style>
 
+{#<script>#}
+{#$i:1;#}
+{#$length:3;#}
+{#@while $i <= $length{#}
+{#	#tab#{$i}:checked{#}
+{#		~ .tabarea1 .tab#{$i}_label{background:#fff; color:#000;}#}
+{#		~ .panel_area #panel#{$i}{display:block;}#}
+{#	}#}
+{#	$i:$i + 1;}#}
+{#</script>#}
 
-<style>
-
-<script>
-$i:1;
-$length:3;
-@while $i <= $length{
-	#tab#{$i}:checked{
-		~ .tabarea1 .tab#{$i}_label{background:#fff; color:#000;}
-		~ .panel_area #panel#{$i}{display:block;}
-	}
-	$i:$i + 1;
-}
-</script>
-
-<!--         <div class="col-xs-2 col-md-2 col-lg-2">
-                <p>ユーザランキング</p>
-                <table class="table">
-                <tbody>
-                    {%for user in user_list %}
-                  <td>
-                    <small><small>アイコン</small></small>
-                  </td>
-                    <td>{{user.user_name}}</td>
-                      {%for tinps in tinps_list %}
-                    <td>
-                   </td>
-                     {% endfor %}
-                  </tr>
-                   {% endfor %}
-                  </tbody>
-                </table>
-              </div> -->
+{#<!--         <div class="col-xs-2 col-md-2 col-lg-2">#}
+{#                <p>ユーザランキング</p>#}
+{#                <table class="table">#}
+{#                <tbody>#}
+{#                    {%for user in user_list %}#}
+{#                  <td>#}
+{#                    <small><small>アイコン</small></small>#}
+{#                  </td>#}
+{#                    <td>{{user.user_name}}</td>#}
+{#                      {%for tinps in tinps_list %}#}
+{#                    <td>#}
+{#                   </td>#}
+{#                     {% endfor %}#}
+{#                  </tr>#}
+{#                   {% endfor %}#}
+{#                  </tbody>#}
+{#                </table>#}
+{#              </div> -->#}
 {% endblock contents %}
